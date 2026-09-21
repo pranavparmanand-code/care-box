@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Care Box 🌷</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#ffeef5,#fff8f0,#eef8ff);
+  color:#4b3b42;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:35px 20px;
+}
+
+h1{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.subtitle{
+  font-size:15px;
+  line-height:1.6;
+  color:#806b73;
+  margin-bottom:30px;
+}
+
+.card{
+  background:rgba(255,255,255,.82);
+  border-radius:24px;
+  padding:25px 20px;
+  margin:18px 0;
+  box-shadow:0 8px 25px rgba(120,80,100,.12);
+  border:1px solid rgba(255,255,255,.8);
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.card h2{
+  font-size:20px;
+  margin:8px 0;
+}
+
+.card p{
+  font-size:14px;
+  line-height:1.7;
+  color:#75636b;
+}
+
+button{
+  border:0;
+  padding:13px 22px;
+  border-radius:30px;
+  background:#e99ab5;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.message{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  background:#fff4f8;
+  border-radius:16px;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-30px;
+  font-size:20px;
+  animation:float 7s linear infinite;
+  opacity:.6;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(0deg);opacity:0}
+  20%{opacity:.7}
+  100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+.footer{
+  margin-top:30px;
+  font-size:13px;
+  color:#9a858d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌷 A Little Care Box 🌷</h1>
+
+<div class="subtitle">
+Made especially for you.<br>
+Because today you deserve a little extra care. 🫶
+</div>
+
+<div class="card">
+<div class="icon">🌷</div>
+<h2>Open when cramps hurt</h2>
+<p>Take things slowly today. Get comfortable, rest and give yourself some time. You don't have to push through everything.</p>
+<button onclick="show('m1')">Open 💗</button>
+<div class="message" id="m1">
+“Bas aaj thoda आराम. Tumhe strong banne ki zarurat nahi hai. 🫂”
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🥺</div>
+<h2>Open when you're irritated</h2>
+<p>No explanations needed. Bad mood allowed. Complaining allowed. Being quiet allowed. 😌</p>
+<button onclick="show('m2')">Open 🌸</button>
+<div class="message" id="m2">
+“Madam ka mood off hai toh off rehne do 😂 Main complaint nahi karunga.”
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🫶</div>
+<h2>Open when you need attention</h2>
+<p>For those moments when you simply want someone to be there.</p>
+<button onclick="show('m3')">Open 💌</button>
+<div class="message" id="m3">
+“Tumhe attention maangne ki zarurat nahi. Kabhi-kabhi bas yaad rakhna ki someone is genuinely thinking about you. ❤️”
+</div>
+</div>
+
+<div class="card">
+<div class="icon">😂</div>
+<h2>Open when you want to smile</h2>
+<p>Emergency smile button activated.</p>
+<button onclick="show('m4')">Open 😂</button>
+<div class="message" id="m4">
+“Breaking news 🚨: Ek special girl ka mood theek karne ke liye ek stupid boy ne poori website bana di. 😂❤️”
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🌙</div>
+<h2>Open before sleeping</h2>
+<p>Last little reminder for tonight.</p>
+<button onclick="show('m5')">Open 🌙</button>
+<div class="message" id="m5">
+“Aaj bas peacefully rest karo. Kal jo hoga dekhenge. Good night, take care of yourself. 🌷❤️”
+</div>
+</div>
+
+<div class="footer">
+Made with a little extra effort, just for you. 🫶
+</div>
+
+</div>
+
+<script>
+function show(id){
+  document.getElementById(id).style.display="block";
+}
+
+function heart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML=["❤️","💗","🌷","✨","💕"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(5+Math.random()*4)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),9000);
+}
+
+setInterval(heart,900);
+</script>
+
+</body>
+</html>
